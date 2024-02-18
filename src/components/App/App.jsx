@@ -1,19 +1,27 @@
-import './App.css'
+import { ArticlePage, articleLoader } from '../../pages/ArticlePage'
+import { BlogPage } from '../../pages/BlogPage'
+import HomePage from '../../pages/HomePage'
+import SignInPage from '../../pages/SignInPage'
+import SignUpPage from '../../pages/SignUpPage'
+import Layout from '../Layout'
+
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<HomePage />} />
+      <Route path="articles" element={<BlogPage />} />
+      <Route path="articles/:slug" element={<ArticlePage />} loader={articleLoader} />
+      <Route path="sign-in" element={<SignInPage />} />
+      <Route path="sign-up" element={<SignUpPage />} />
+      <Route path="*" element={<h2>Page not found</h2>} />
+    </Route>
+  )
+)
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
