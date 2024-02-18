@@ -1,0 +1,139 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin truncate-title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+@mixin truncate-description {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+}
+@mixin user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+@mixin username {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: 18px;
+  line-height: 28px;
+  color: $heading-color;
+}
+@mixin avatar {
+  width: 46px;
+  height: 46px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+@mixin authTitle {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #262626;
+  &__wrapper {
+    @include center;
+    width: 100%;
+  }
+}
+@mixin authLabel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+}
+
+@mixin authInput {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  outline-color: #188fff85;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-color;
+
+  &::placeholder {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #bfbfbf;
+  }
+}
+@mixin authButton {
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  background: $info-color;
+  border: 1px solid $info-color;
+  border-radius: 4px;
+  outline: none;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $background-color-base;
+  cursor: pointer;
+  &:active {
+    background-color: #0f82ee;
+  }
+}
+@mixin account {
+  &__wrapper {
+    @include center;
+    width: 100%;
+  }
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: 12px;
+  line-height: 20px;
+  color: #8c8c8c;
+  margin-top: 8px;
+
+  a {
+    cursor: pointer;
+    color: #1890ff;
+  }
+}

@@ -14,6 +14,7 @@
   },
   "plugins": ["react", "jsx-a11y", "import", "react-hooks", "prettier"],
   "rules": {
+    "no-param-reassign": 0,
     "consistent-return": 0,
     "react/jsx-props-no-spreading": 0,
     "no-shadow": 0,
@@ -26,7 +27,7 @@
     "indent": ["error", 2],
     "prettier/prettier": "error",
     "linebreak-style": [0, "unix"],
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
     "import/prefer-default-export": 0,
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "import/order": [

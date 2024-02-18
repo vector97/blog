@@ -1,8 +1,21 @@
 import App from './components/App'
+import ErrorBoundary from './components/ErrorBoundary'
+import { store } from './store'
+import './styles/base.scss'
 
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-import './index.css'
+const container = document.getElementById('root')
+const root = createRoot(container)
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </Provider>
+  </BrowserRouter>
+)

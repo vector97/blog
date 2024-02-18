@@ -1,0 +1,133 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixin.scss';
+
+.article {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: $background-color-base;
+  padding: 15px 14px 24px 16px;
+  width: 938px;
+  margin-bottom: 26px;
+
+  &__wrapper {
+    @include center;
+    flex-direction: column;
+    margin-top: 26px;
+  }
+
+  &__titleWraper {
+    display: flex;
+    align-items: baseline;
+    gap: 13px;
+  }
+
+  &__info {
+    width: 70%;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__info {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 12px;
+    }
+  }
+  &__title {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: 20px;
+    line-height: 28px;
+    color: $info-color;
+    white-space: break-spaces;
+  }
+  &__likesCount {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: $font-family;
+    font-size: 12px;
+    line-height: 22px;
+    color: $text-color;
+
+    button {
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+  &__tags {
+    display: flex;
+    margin: 6px 0;
+    gap: 8px;
+  }
+  &__tag {
+    @include center;
+    border: 1px solid $text-color-secondary;
+    border-radius: 2px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: $font-weight;
+    font-size: 12px;
+    line-height: 15px;
+    color: $text-color-secondary;
+    padding: 5px;
+  }
+  &__description {
+    font-family: $font-family;
+    font-size: 12px;
+    line-height: 22px;
+    color: $text-color-secondary;
+    margin-bottom: 25px;
+  }
+  &__body {
+    font-family: $font-family;
+    font-size: 20px;
+    line-height: 28px;
+    color: $text-color;
+  }
+  &__userName {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: 18px;
+    line-height: 28px;
+    color: $heading-color;
+  }
+  &__date {
+    font-family: $font-family;
+    font-size: 12px;
+    line-height: 22px;
+    color: $text-color-secondary;
+  }
+  &__avatar {
+    width: 46px;
+    height: 46px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 12px;
+  }
+  &__btn {
+    width: 78px;
+    height: 31px;
+  }
+  &__edit {
+    border: 1px solid $success-color;
+    border-radius: 5px;
+    color: $success-color;
+    background-color: $background-color-base;
+  }
+}

@@ -1,27 +1,62 @@
-import { ArticlePage, articleLoader } from '../../pages/ArticlePage'
-import { BlogPage } from '../../pages/BlogPage'
-import HomePage from '../../pages/HomePage'
-import SignInPage from '../../pages/SignInPage'
-import SignUpPage from '../../pages/SignUpPage'
+import RequiredAuth from '../../hoc/RequiredAuth'
+import Article from '../../pages/Article'
+import ArticlesList from '../../pages/ArticlesList'
+import CreateArticle from '../../pages/CreateArticle'
+import EditArticle from '../../pages/EditArticle'
+import Page404 from '../../pages/Page404'
+import Profile from '../../pages/Profile'
+import SignIn from '../../pages/SignIn'
+import SignUp from '../../pages/SignUp'
+import { setUser } from '../../store/slices/userSlice'
 import Layout from '../Layout'
 
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route index element={<HomePage />} />
-      <Route path="articles" element={<BlogPage />} />
-      <Route path="articles/:slug" element={<ArticlePage />} loader={articleLoader} />
-      <Route path="sign-in" element={<SignInPage />} />
-      <Route path="sign-up" element={<SignUpPage />} />
-      <Route path="*" element={<h2>Page not found</h2>} />
-    </Route>
-  )
-)
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  return <RouterProvider router={router} />
+  const dispatch = useDispatch()
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (user) {
+      dispatch(setUser(user))
+    }
+  }, [dispatch])
+
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<ArticlesList />} />
+
+        <Route path="articles" element={<ArticlesList />} />
+        <Route path="articles/:slug" element={<Article />} />
+        <Route
+          path="new-article"
+          element={
+            <RequiredAuth>
+              <CreateArticle />
+            </RequiredAuth>
+          }
+        />
+
+        <Route path="articles/:slug/edit" element={<EditArticle />} />
+
+        <Route path="signUp" element={<SignUp />} />
+        <Route path="signIn" element={<SignIn />} />
+
+        <Route
+          path="profile"
+          element={
+            <RequiredAuth>
+              <Profile />
+            </RequiredAuth>
+          }
+        />
+      </Route>
+
+      <Route path="*" element={<Page404 />} />
+    </Routes>
+  )
 }
 
 export default App

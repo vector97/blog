@@ -1,0 +1,9 @@
+@import '../../styles/mixin.scss';
+
+.articles {
+  &__wrapper {
+    @include center;
+    flex-direction: column;
+    margin-top: 26px;
+  }
+}

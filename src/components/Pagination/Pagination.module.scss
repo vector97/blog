@@ -1,0 +1,8 @@
+@import '../../styles/mixin.scss';
+
+.pagination {
+  &__wrapper {
+    margin-bottom: 25px;
+    @include center;
+  }
+}
