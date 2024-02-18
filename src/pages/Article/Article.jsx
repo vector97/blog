@@ -42,16 +42,17 @@ function Article() {
     <div className={styles.article__wrapper}>
       <div className={styles.article}>
         <div className={styles.article__info}>
-          <div className={styles.article__titleWraper}>
+          <div className={styles.article__titleWrapper}>
             <h5 className={styles.article__title}>{oneArticle.title}</h5>
+
             <span className={styles.article__likesCount}>
               <button type="button" onClick={(e) => handleAddLike(e, user, dispatch, oneArticle, navigate)}>
                 {oneArticle.favorited ? <img src={likeIcon} alt="I like it" /> : <img src={heart} alt="I like it" />}
               </button>
-
               {oneArticle.favoritesCount}
             </span>
           </div>
+
           <div className={styles.article__tags}>
             {addIdForTags(oneArticle.tagList).map((tag) => (
               <span key={tag.id} className={styles.article__tag}>
@@ -59,16 +60,19 @@ function Article() {
               </span>
             ))}
           </div>
+
           <p className={styles.article__description}>{oneArticle.description}</p>
 
           <Markdown className={styles.article__body}>{oneArticle.body}</Markdown>
         </div>
+
         <div className={styles.article__user}>
           <div className={styles.article__user__info} style={{ display: 'flex' }}>
             <div>
               <h6 className={styles.article__userName}>{oneArticle.author.username}</h6>
               <span className={styles.article__date}>{formatCreatedDate(oneArticle.createdAt)}</span>
             </div>
+
             <div className={styles.article__avatar}>
               <img src={oneArticle.author.image ? oneArticle.author.image : userAvatar} alt="user avatar" />
             </div>

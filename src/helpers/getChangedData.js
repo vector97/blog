@@ -6,5 +6,6 @@ export const getChangedData = (fields, data) => {
       changedData[key] = fields[key]
     }
   })
+
   return changedData
 }

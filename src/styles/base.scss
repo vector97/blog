@@ -5,25 +5,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: #ebeef3;
 }
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
 }
+
 .ant-pagination .ant-pagination-item-active {
   font-weight: 600;
   background-color: #1890ff;
 }
+
 .ant-pagination .ant-pagination-item-active:hover {
   background-color: #1677ffd4;
 }
+
 .ant-pagination .ant-pagination-item-active a {
   color: white !important;
 }
+
 .ant-pagination .ant-pagination-item-active a:hover {
   color: white;
 }

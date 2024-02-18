@@ -15,6 +15,7 @@ export default class ErrorBoundary extends Component {
   render() {
     const { error } = this.state
     const { children } = this.props
+
     if (error) {
       return (
         <div className={styles.error}>

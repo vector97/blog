@@ -16,8 +16,10 @@ import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const dispatch = useDispatch()
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'))
+
     if (user) {
       dispatch(setUser(user))
     }
@@ -27,7 +29,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<ArticlesList />} />
-
         <Route path="articles" element={<ArticlesList />} />
         <Route path="articles/:slug" element={<Article />} />
         <Route
@@ -38,12 +39,9 @@ function App() {
             </RequiredAuth>
           }
         />
-
         <Route path="articles/:slug/edit" element={<EditArticle />} />
-
         <Route path="signUp" element={<SignUp />} />
         <Route path="signIn" element={<SignIn />} />
-
         <Route
           path="profile"
           element={
@@ -53,7 +51,6 @@ function App() {
           }
         />
       </Route>
-
       <Route path="*" element={<Page404 />} />
     </Routes>
   )

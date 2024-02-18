@@ -12,6 +12,7 @@ function Spin() {
       spin
     />
   )
+
   return (
     <div className={styles.spin}>
       <AntSpin indicator={antIcon} />

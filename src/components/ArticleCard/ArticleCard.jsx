@@ -21,7 +21,7 @@ function ArticleCard({ article }) {
     <Link to={`/articles/${article.slug}`}>
       <div className={styles.article}>
         <div className={styles.article__info}>
-          <div className={styles.article__titleWraper}>
+          <div className={styles.article__titleWrapper}>
             <h5 className={styles.article__title}>{article.title}</h5>
 
             <span className={styles.article__likesCount}>
@@ -31,6 +31,7 @@ function ArticleCard({ article }) {
               {article.favoritesCount}
             </span>
           </div>
+
           <div className={styles.article__tags}>
             {tagWithId.map((tag) => (
               <span key={tag.id} className={styles.article__tag}>
@@ -38,6 +39,7 @@ function ArticleCard({ article }) {
               </span>
             ))}
           </div>
+
           <p className={styles.article__description}>{article.description}</p>
         </div>
 
@@ -46,6 +48,7 @@ function ArticleCard({ article }) {
             <h6 className={styles.article__userName}>{article.author.username}</h6>
             <span className={styles.article__date}>{createdAt}</span>
           </div>
+
           <div className={styles.article__avatar}>
             <img src={article.author.image ? article.author.image : userAvatar} alt="user avatar" />
           </div>

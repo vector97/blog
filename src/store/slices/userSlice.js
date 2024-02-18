@@ -21,6 +21,7 @@ const userSlice = createSlice({
       state.user = null
     },
   },
+
   extraReducers(builder) {
     builder
       .addCase(setNewUser.pending, (state) => {

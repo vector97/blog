@@ -7,6 +7,7 @@ function RequiredAuth({ children }) {
   if (user) {
     return children
   }
+
   return <Navigate to="/signIn" state={{ from: location }} />
 }
 

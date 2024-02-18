@@ -38,12 +38,14 @@ function Header() {
             <Link to="/profile">
               <h6 className={styles.auth__userName}>{user.username}</h6>
             </Link>
+
             <Link to="/profile">
               <div className={styles.auth__avatar}>
                 <img src={user.image ? user.image : userAvatar} alt="user avatar" />
               </div>
             </Link>
           </div>
+
           <Button
             type="button"
             className={`${styles.header__btn} ${styles.header__btn_logOut}`}

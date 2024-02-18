@@ -12,13 +12,12 @@ import { useDispatch, useSelector } from 'react-redux'
 function ArticlesList() {
   const dispatch = useDispatch()
   const { articles, status } = useSelector((state) => state.articles)
-
   const [page, setPage] = useState(1)
-
   const offset = (page - 1) * 20
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'))
+
     if (user) {
       dispatch(fetchArticles({ offset, token: user.user.token }))
     } else {
@@ -41,6 +40,7 @@ function ArticlesList() {
   return (
     <>
       <div className={styles.articles__wrapper}>{content}</div>
+
       {articles.length === 0 || status === 'loading' ? null : <Pagination setPage={setPage} page={page} />}
     </>
   )

@@ -10,11 +10,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 function SignIn() {
   const dispatch = useDispatch()
   const userError = useSelector((state) => state.user.userError)
-
   const location = useLocation()
   const navigate = useNavigate()
   const from = location.state?.from?.pathname || -1
-
   const {
     register,
     formState: { errors },
@@ -80,9 +78,11 @@ function SignIn() {
           {errorHandler('password', errors)}
           {userError ? <p>email or password {userError['email or password']}</p> : null}
         </label>
+
         <button type="submit" className={styles.signIn__submit}>
           Login
         </button>
+
         <div className={styles.account__wrapper}>
           <span className={styles.account}>
             Don’t have an account?

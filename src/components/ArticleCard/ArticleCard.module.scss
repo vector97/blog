@@ -10,7 +10,7 @@
   width: 938px;
   margin-bottom: 26px;
 
-  &__titleWraper {
+  &__titleWrapper {
     display: flex;
     align-items: baseline;
     gap: 13px;
@@ -25,6 +25,7 @@
     align-items: center;
     gap: 12px;
   }
+
   &__title {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -33,6 +34,7 @@
     color: $info-color;
     @include truncate-title;
   }
+
   &__likesCount {
     display: flex;
     align-items: center;
@@ -49,11 +51,13 @@
       cursor: pointer;
     }
   }
+
   &__tags {
     display: flex;
     margin: 6px 0;
     gap: 8px;
   }
+
   &__tag {
     @include center;
     height: 20px;
@@ -68,6 +72,7 @@
     color: $text-color-secondary;
     padding: 5px;
   }
+
   &__description {
     font-family: $font-family;
     font-size: 12px;
@@ -75,6 +80,7 @@
     color: $text-color;
     @include truncate-description;
   }
+
   &__userName {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -82,12 +88,14 @@
     line-height: 28px;
     color: $heading-color;
   }
+
   &__date {
     font-family: $font-family;
     font-size: 12px;
     line-height: 22px;
     color: $text-color-secondary;
   }
+
   &__avatar {
     @include avatar;
   }

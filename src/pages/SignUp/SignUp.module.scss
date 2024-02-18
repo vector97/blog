@@ -11,12 +11,13 @@
   background: $background-color-base;
   border: $frame-border;
   box-shadow: $box-shadow;
-
   border-radius: $frame-radius;
+
   &__wrapper {
     @include center;
     margin: 60px 0;
   }
+
   &__title {
     @include authTitle;
   }
@@ -24,9 +25,11 @@
   &__label {
     @include authLabel;
   }
+
   &__input {
     @include authInput;
   }
+
   &__agree {
     width: 16px;
     height: 16px;
@@ -45,12 +48,15 @@
       color: #595959;
     }
   }
+
   &__submit {
     @include authButton;
   }
+
   p {
     color: red;
   }
+
   .account {
     @include account;
   }

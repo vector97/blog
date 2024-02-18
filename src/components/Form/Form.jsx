@@ -24,12 +24,10 @@ function Form({ title, initialValue, mode, slug }) {
   } = useForm({
     criteriaMode: 'all',
   })
-
   const { fields, append, remove, replace } = useFieldArray({
     name: 'tagList',
     control,
   })
-
   const tagListLength = watch('tagList')?.length === 0
 
   useEffect(() => {
@@ -42,16 +40,19 @@ function Form({ title, initialValue, mode, slug }) {
 
   const clearTagList = (data) => {
     const tags = []
+
     data.tagList.forEach((tag) => {
       if (tag !== '') {
         tags.push(tag)
       }
     })
+
     return { ...data, tagList: tags }
   }
 
   const onSubmit = (data) => {
     const article = clearTagList(data)
+
     if (mode === 'createMode') {
       dispatch(
         createNewArticle({
@@ -64,6 +65,7 @@ function Form({ title, initialValue, mode, slug }) {
       )
     } else if (mode === 'editMode') {
       const editedArticle = getChangedData(article, initialValue)
+
       dispatch(
         updateArticle({
           slug,
@@ -113,6 +115,7 @@ function Form({ title, initialValue, mode, slug }) {
           />
           {errorHandler('description', errors)}
         </label>
+
         <label className={styles.newArticle__label}>
           Text
           <textarea
@@ -129,7 +132,7 @@ function Form({ title, initialValue, mode, slug }) {
         </label>
 
         <label className={styles.newArticle__label}>
-          Tegs
+          Tags
           {fields.map((field, i) => (
             <div key={field.id} className={styles.newArticle__tags}>
               <input
@@ -142,10 +145,12 @@ function Form({ title, initialValue, mode, slug }) {
                   required: false,
                 })}
               />
+
               <div className={styles.newArticle__buttons}>
                 <Button className={styles.newArticle__btn} danger onClick={() => remove(i)}>
-                  Delate
+                  Delete
                 </Button>
+
                 {i === fields.length - 1 && (
                   <Button
                     className={`${styles.newArticle__btn} ${styles.newArticle__btn_add}`}

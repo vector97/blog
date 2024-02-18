@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from 'react-redux'
 function Profile() {
   const dispatch = useDispatch()
   const { userError, user, userLoading } = useSelector((state) => state.user)
-
   const {
     register,
     formState: { errors },
@@ -20,7 +19,6 @@ function Profile() {
   } = useForm({
     criteriaMode: 'all',
   })
-
   const [messageApi, contextHolder] = message.useMessage()
 
   useEffect(() => {
@@ -34,7 +32,6 @@ function Profile() {
 
   const onSubmit = (data) => {
     const changedData = getChangedData(data, user)
-
     const updatedUser = JSON.stringify({ user: changedData })
     dispatch(
       updateUser({
@@ -52,6 +49,7 @@ function Profile() {
           <div className={styles.profile__title__wrapper}>
             <h2 className={styles.profile__title}>Edit Profile</h2>
           </div>
+
           <label className={styles.profile__label}>
             Username
             <input

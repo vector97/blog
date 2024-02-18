@@ -12,6 +12,7 @@ function Pagination({ setPage }) {
     setPage(page)
     ScrollToTop()
   }
+
   return (
     <div className={styles.pagination__wrapper}>
       <ArticlesPagination

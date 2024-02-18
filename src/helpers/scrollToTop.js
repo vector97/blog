@@ -5,5 +5,6 @@ export function ScrollToTop() {
       left: 0,
     })
   }
+
   return <div>{move()}</div>
 }

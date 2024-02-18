@@ -3,34 +3,27 @@
   align-items: center;
   justify-content: center;
 }
+
 @mixin truncate-title {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
+  display: flex;
   box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
 }
 
 @mixin truncate-description {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
+  display: flex;
   box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 5;
 }
+
 @mixin user {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 @mixin username {
   font-family: $font-family;
   font-weight: $font-weight;
@@ -38,6 +31,7 @@
   line-height: 28px;
   color: $heading-color;
 }
+
 @mixin avatar {
   width: 46px;
   height: 46px;
@@ -57,11 +51,13 @@
   font-size: 20px;
   line-height: 28px;
   color: #262626;
+
   &__wrapper {
     @include center;
     width: 100%;
   }
 }
+
 @mixin authLabel {
   display: flex;
   flex-direction: column;
@@ -99,6 +95,7 @@
     color: #bfbfbf;
   }
 }
+
 @mixin authButton {
   text-align: center;
   width: 100%;
@@ -115,15 +112,18 @@
   line-height: 24px;
   color: $background-color-base;
   cursor: pointer;
+
   &:active {
     background-color: #0f82ee;
   }
 }
+
 @mixin account {
   &__wrapper {
     @include center;
     width: 100%;
   }
+
   font-family: 'Roboto';
   font-style: normal;
   font-weight: $font-weight;

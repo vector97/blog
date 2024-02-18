@@ -16,7 +16,7 @@
     margin-top: 26px;
   }
 
-  &__titleWraper {
+  &__titleWrapper {
     display: flex;
     align-items: baseline;
     gap: 13px;
@@ -34,10 +34,11 @@
     &__info {
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: flex-end;
       gap: 12px;
     }
   }
+
   &__title {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -46,6 +47,7 @@
     color: $info-color;
     white-space: break-spaces;
   }
+
   &__likesCount {
     display: flex;
     align-items: center;
@@ -62,11 +64,13 @@
       cursor: pointer;
     }
   }
+
   &__tags {
     display: flex;
     margin: 6px 0;
     gap: 8px;
   }
+
   &__tag {
     @include center;
     border: 1px solid $text-color-secondary;
@@ -79,6 +83,7 @@
     color: $text-color-secondary;
     padding: 5px;
   }
+
   &__description {
     font-family: $font-family;
     font-size: 12px;
@@ -86,12 +91,14 @@
     color: $text-color-secondary;
     margin-bottom: 25px;
   }
+
   &__body {
     font-family: $font-family;
     font-size: 20px;
     line-height: 28px;
     color: $text-color;
   }
+
   &__userName {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -99,12 +106,14 @@
     line-height: 28px;
     color: $heading-color;
   }
+
   &__date {
     font-family: $font-family;
     font-size: 12px;
     line-height: 22px;
     color: $text-color-secondary;
   }
+
   &__avatar {
     width: 46px;
     height: 46px;
@@ -116,14 +125,17 @@
       border-radius: 50%;
     }
   }
+
   &__buttons {
     display: flex;
     gap: 12px;
   }
+
   &__btn {
     width: 78px;
     height: 31px;
   }
+
   &__edit {
     border: 1px solid $success-color;
     border-radius: 5px;

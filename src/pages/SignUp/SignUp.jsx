@@ -13,7 +13,6 @@ function SignUp() {
   const location = useLocation()
   const navigate = useNavigate()
   const from = location.state?.from?.pathname || -1
-
   const {
     register,
     watch,
@@ -36,6 +35,7 @@ function SignUp() {
         <div className={styles.signUp__title__wrapper}>
           <h2 className={styles.signUp__title}>Create new account</h2>
         </div>
+
         <label className={styles.signUp__label}>
           Username
           <input

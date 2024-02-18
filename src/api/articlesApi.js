@@ -9,6 +9,7 @@ export const getArticles = async (offset, token) => {
       Authorization: `Bearer ${token}`,
     },
   })
+
   return response.data
 }
 
