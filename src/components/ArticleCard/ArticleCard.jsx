@@ -49,7 +49,7 @@ function ArticleCard({ article }) {
           </div>
 
           <div className={styles.article__avatar}>
-            <img src={article.author.image ? article.author.image : userAvatar} alt="user avatar" />
+            <img src={article.author.image || userAvatar} alt="user avatar" />
           </div>
         </div>
       </div>
