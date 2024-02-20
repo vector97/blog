@@ -8,14 +8,13 @@ import { handleAddLike } from '../../helpers/addLike'
 import { formatCreatedDate } from '../../helpers/formatDate'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function ArticleCard({ article }) {
   const dispatch = useDispatch()
   const createdAt = formatCreatedDate(article.createdAt)
   const tagWithId = addIdForTags(article.tagList)
   const user = useSelector((state) => state.user.user)
-  const navigate = useNavigate()
 
   return (
     <Link to={`/articles/${article.slug}`}>
@@ -25,7 +24,7 @@ function ArticleCard({ article }) {
             <h5 className={styles.article__title}>{article.title}</h5>
 
             <span className={styles.article__likesCount}>
-              <button type="button" onClick={(e) => handleAddLike(e, user, dispatch, article, navigate)}>
+              <button type="button" onClick={(e) => handleAddLike(e, user, dispatch, article)}>
                 {article.favorited ? <img src={like} alt="I like it" /> : <img src={heart} alt="I like it" />}
               </button>
               {article.favoritesCount}
