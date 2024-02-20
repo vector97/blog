@@ -3,6 +3,7 @@ import styles from './Form.module.scss'
 import { errorHandler } from '../../helpers/errorHandler'
 import { getChangedData } from '../../helpers/getChangedData'
 import { createNewArticle, updateArticle } from '../../store/thunks/articlesThunk'
+import { PATHS } from '../App'
 
 import { Button } from 'antd'
 import PropTypes from 'prop-types'
@@ -59,7 +60,7 @@ function Form({ title, initialValue, mode, slug }) {
           newArticle: JSON.stringify({ article }),
           token: user.token,
           cb: () => {
-            navigate('/')
+            navigate(PATHS.HOME)
           },
         })
       )
@@ -72,7 +73,7 @@ function Form({ title, initialValue, mode, slug }) {
           editedArticle: JSON.stringify({ article: editedArticle }),
           token: user.token,
           cb: () => {
-            navigate(`/articles/${slug}`)
+            navigate(PATHS.ARTICLE.replace(':slug', slug))
           },
         })
       )

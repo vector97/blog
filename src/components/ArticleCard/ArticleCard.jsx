@@ -6,6 +6,7 @@ import like from '../../assets/like.svg'
 import { addIdForTags } from '../../helpers/addIdForTags'
 import { handleAddLike } from '../../helpers/addLike'
 import { formatCreatedDate } from '../../helpers/formatDate'
+import { PATHS } from '../App'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -17,7 +18,7 @@ function ArticleCard({ article }) {
   const user = useSelector((state) => state.user.user)
 
   return (
-    <Link to={`/articles/${article.slug}`}>
+    <Link to={PATHS.ARTICLE.replace(':slug', article.slug)}>
       <div className={styles.article}>
         <div className={styles.article__info}>
           <div className={styles.article__titleWrapper}>

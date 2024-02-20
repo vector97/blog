@@ -1,5 +1,6 @@
 import styles from './SignUp.module.scss'
 
+import { PATHS } from '../../components/App'
 import { errorHandler } from '../../helpers/errorHandler'
 import { setNewUser } from '../../store/thunks/authThunk'
 
@@ -152,7 +153,7 @@ function SignUp() {
         <div className={styles.account__wrapper}>
           <span className={styles.account}>
             Already have an account?
-            <Link to="/signin"> Sign In.</Link>
+            <Link to={PATHS.SIGN_IN}> Sign In.</Link>
           </span>
         </div>
       </form>

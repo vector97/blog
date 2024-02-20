@@ -1,3 +1,5 @@
+import { PATHS } from '../components/App'
+
 import { Navigate, useLocation } from 'react-router-dom'
 
 function RequiredAuth({ children }) {
@@ -8,7 +10,7 @@ function RequiredAuth({ children }) {
     return children
   }
 
-  return <Navigate to="/signIn" state={{ from: location }} />
+  return <Navigate to={PATHS.SIGN_IN} state={{ from: location }} />
 }
 
 export default RequiredAuth

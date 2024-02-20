@@ -3,6 +3,7 @@ import styles from './Article.module.scss'
 import userAvatar from '../../assets/avatar.svg'
 import heart from '../../assets/heart.svg'
 import likeIcon from '../../assets/like.svg'
+import { PATHS } from '../../components/App'
 import Spin from '../../components/Spin'
 import { addIdForTags } from '../../helpers/addIdForTags'
 import { handleAddLike } from '../../helpers/addLike'
@@ -35,6 +36,7 @@ function Article() {
 
   const confirm = () => {
     dispatch(deleteArticle({ slug, token: user.token }))
+    navigate(PATHS.HOME)
   }
 
   ScrollToTop()
@@ -86,7 +88,7 @@ function Article() {
                 </Button>
               </Popconfirm>
 
-              <Link to={`/articles/${slug}/edit`}>
+              <Link to={PATHS.EDIT_ARTICLE.replace(':slug', slug)}>
                 <Button className={`${styles.article__btn} ${styles.article__edit}`} type="button" ghost>
                   Edit
                 </Button>

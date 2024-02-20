@@ -14,6 +14,18 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 
+export const PATHS = {
+  HOME: '/',
+  ARTICLES: 'articles',
+  ARTICLE: '/articles/:slug',
+  NEW_ARTICLE: 'new-article',
+  EDIT_ARTICLE: '/articles/:slug/edit',
+  SIGN_UP: 'signUp',
+  SIGN_IN: 'signIn',
+  PROFILE: 'profile',
+  NOT_FOUND: '*',
+}
+
 function App() {
   const dispatch = useDispatch()
 
@@ -27,23 +39,23 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path={PATHS.HOME} element={<Layout />}>
         <Route index element={<ArticlesList />} />
-        <Route path="articles" element={<ArticlesList />} />
-        <Route path="articles/:slug" element={<Article />} />
+        <Route path={PATHS.ARTICLES} element={<ArticlesList />} />
+        <Route path={PATHS.ARTICLE} element={<Article />} />
         <Route
-          path="new-article"
+          path={PATHS.NEW_ARTICLE}
           element={
             <RequiredAuth>
               <CreateArticle />
             </RequiredAuth>
           }
         />
-        <Route path="articles/:slug/edit" element={<EditArticle />} />
-        <Route path="signUp" element={<SignUp />} />
-        <Route path="signIn" element={<SignIn />} />
+        <Route path={PATHS.EDIT_ARTICLE} element={<EditArticle />} />
+        <Route path={PATHS.SIGN_UP} element={<SignUp />} />
+        <Route path={PATHS.SIGN_IN} element={<SignIn />} />
         <Route
-          path="profile"
+          path={PATHS.PROFILE}
           element={
             <RequiredAuth>
               <Profile />
@@ -51,7 +63,7 @@ function App() {
           }
         />
       </Route>
-      <Route path="*" element={<Page404 />} />
+      <Route path={PATHS.NOT_FOUND} element={<Page404 />} />
     </Routes>
   )
 }

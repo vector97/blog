@@ -28,6 +28,7 @@
     "prettier/prettier": "error",
     "linebreak-style": [0, "unix"],
     "quotes": ["error", "single", { "avoidEscape": true }],
+    "import/no-cycle": 0,
     "import/prefer-default-export": 0,
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "import/order": [

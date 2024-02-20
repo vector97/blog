@@ -3,6 +3,7 @@ import styles from './Header.module.scss'
 import userAvatar from '../../assets/avatar.svg'
 import { logOut } from '../../store/slices/userSlice'
 import { fetchArticles } from '../../store/thunks/articlesThunk'
+import { PATHS } from '../App'
 
 import { Button } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,29 +18,29 @@ function Header() {
     localStorage.removeItem('user')
     dispatch(logOut())
     dispatch(fetchArticles({ offset: 0 }))
-    navigate('/')
+    navigate(PATHS.HOME)
   }
 
   return (
     <div className={styles.header__wrapper}>
-      <Link to="/">
+      <Link to={PATHS.HOME}>
         <p className={styles.header__heading}>Realworld Blog</p>
       </Link>
 
       {user ? (
         <div className={styles.auth}>
-          <Link to="/new-article">
+          <Link to={PATHS.NEW_ARTICLE}>
             <Button className={styles.createArticle} type="button">
               Create article
             </Button>
           </Link>
 
           <div className={styles.auth__user}>
-            <Link to="/profile">
+            <Link to={PATHS.PROFILE}>
               <p className={styles.auth__userName}>{user.username}</p>
             </Link>
 
-            <Link to="/profile">
+            <Link to={PATHS.PROFILE}>
               <div className={styles.auth__avatar}>
                 <img src={user.image ? user.image : userAvatar} alt="user avatar" />
               </div>
@@ -56,13 +57,13 @@ function Header() {
         </div>
       ) : (
         <div className="no-auth">
-          <Link to="signIn">
+          <Link to={PATHS.SIGN_IN}>
             <Button type="button" className={styles.header__btn}>
               Sign In
             </Button>
           </Link>
 
-          <Link to="signUp">
+          <Link to={PATHS.SIGN_UP}>
             <Button type="button" className={`${styles.header__btn} ${styles.header__btn_success}`}>
               Sign Up
             </Button>
