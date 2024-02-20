@@ -23,7 +23,7 @@ function Header() {
   return (
     <div className={styles.header__wrapper}>
       <Link to="/">
-        <h6 className={styles.header__heading}>Realworld Blog</h6>
+        <p className={styles.header__heading}>Realworld Blog</p>
       </Link>
 
       {user ? (
@@ -36,7 +36,7 @@ function Header() {
 
           <div className={styles.auth__user}>
             <Link to="/profile">
-              <h6 className={styles.auth__userName}>{user.username}</h6>
+              <p className={styles.auth__userName}>{user.username}</p>
             </Link>
 
             <Link to="/profile">

@@ -35,7 +35,7 @@ function SignIn() {
     <div className={styles.signIn__wrapper}>
       <form className={styles.signIn} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.signIn__title__wrapper}>
-          <h2 className={styles.signIn__title}>Sign In</h2>
+          <h1 className={styles.signIn__title}>Sign In</h1>
         </div>
 
         <label className={styles.signIn__label}>

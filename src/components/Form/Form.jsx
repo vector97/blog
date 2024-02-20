@@ -83,7 +83,7 @@ function Form({ title, initialValue, mode, slug }) {
     <div className={styles.newArticle__wrapper}>
       <form className={styles.newArticle} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.newArticle__title__wrapper}>
-          <h2 className={styles.newArticle__title}>{title}</h2>
+          <h1 className={styles.newArticle__title}>{title}</h1>
         </div>
 
         <label className={styles.newArticle__label}>

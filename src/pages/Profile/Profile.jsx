@@ -47,7 +47,7 @@ function Profile() {
       <div className={styles.profile__wrapper}>
         <form className={styles.profile} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.profile__title__wrapper}>
-            <h2 className={styles.profile__title}>Edit Profile</h2>
+            <h1 className={styles.profile__title}>Edit Profile</h1>
           </div>
 
           <label className={styles.profile__label}>

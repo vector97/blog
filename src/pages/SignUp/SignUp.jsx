@@ -33,7 +33,7 @@ function SignUp() {
     <div className={styles.signUp__wrapper}>
       <form className={styles.signUp} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.signUp__title__wrapper}>
-          <h2 className={styles.signUp__title}>Create new account</h2>
+          <h1 className={styles.signUp__title}>Create new account</h1>
         </div>
 
         <label className={styles.signUp__label}>

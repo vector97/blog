@@ -43,7 +43,7 @@ function Article() {
       <div className={styles.article}>
         <div className={styles.article__info}>
           <div className={styles.article__titleWrapper}>
-            <h5 className={styles.article__title}>{oneArticle.title}</h5>
+            <h1 className={styles.article__title}>{oneArticle.title}</h1>
 
             <span className={styles.article__likesCount}>
               <button type="button" onClick={(e) => handleAddLike(e, user, dispatch, oneArticle, navigate)}>
@@ -69,7 +69,7 @@ function Article() {
         <div className={styles.article__user}>
           <div className={styles.article__user__info} style={{ display: 'flex' }}>
             <div>
-              <h6 className={styles.article__userName}>{oneArticle.author.username}</h6>
+              <p className={styles.article__userName}>{oneArticle.author.username}</p>
               <span className={styles.article__date}>{formatCreatedDate(oneArticle.createdAt)}</span>
             </div>
 

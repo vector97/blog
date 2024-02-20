@@ -39,6 +39,10 @@ function ArticlesList() {
 
   return (
     <>
+      <div className={styles.articles__title__wrapper}>
+        <h1 className={styles.articles__title}>Posts</h1>
+      </div>
+
       <div className={styles.articles__wrapper}>{content}</div>
 
       {articles.length === 0 || status === 'loading' ? null : <Pagination setPage={setPage} page={page} />}

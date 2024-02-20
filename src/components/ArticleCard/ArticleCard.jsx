@@ -21,7 +21,7 @@ function ArticleCard({ article }) {
       <div className={styles.article}>
         <div className={styles.article__info}>
           <div className={styles.article__titleWrapper}>
-            <h5 className={styles.article__title}>{article.title}</h5>
+            <h2 className={styles.article__title}>{article.title}</h2>
 
             <span className={styles.article__likesCount}>
               <button type="button" onClick={(e) => handleAddLike(e, user, dispatch, article)}>
@@ -44,7 +44,7 @@ function ArticleCard({ article }) {
 
         <div className={styles.article__user}>
           <div>
-            <h6 className={styles.article__userName}>{article.author.username}</h6>
+            <p className={styles.article__userName}>{article.author.username}</p>
             <span className={styles.article__date}>{createdAt}</span>
           </div>
 
