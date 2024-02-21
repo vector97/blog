@@ -6,6 +6,7 @@ import { fetchArticles } from '../../store/thunks/articlesThunk'
 import { PATHS } from '../App'
 
 import { Button } from 'antd'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -13,6 +14,7 @@ function Header() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector((state) => state.user)
+  const [isError, setIsError] = useState(false)
 
   const logOutHandler = () => {
     localStorage.removeItem('user')
@@ -42,7 +44,7 @@ function Header() {
 
             <Link to={PATHS.PROFILE}>
               <div className={styles.auth__avatar}>
-                <img src={user.image ? user.image : userAvatar} alt="user avatar" />
+                <img src={isError ? userAvatar : user.image} alt="user avatar" onError={() => setIsError(true)} />
               </div>
             </Link>
           </div>

@@ -13,7 +13,7 @@ import { deleteArticle, fetchOneArticle } from '../../store/thunks/articlesThunk
 
 import { Button, Popconfirm } from 'antd'
 import Markdown from 'markdown-to-jsx'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -23,6 +23,7 @@ function Article() {
   const { oneArticle, status } = useSelector((state) => state.articles)
   const user = useSelector((state) => state.user.user)
   const navigate = useNavigate()
+  const [isError, setIsError] = useState(false)
 
   useEffect(() => {
     if (user) {
@@ -76,7 +77,11 @@ function Article() {
             </div>
 
             <div className={styles.article__avatar}>
-              <img src={oneArticle.author.image ? oneArticle.author.image : userAvatar} alt="user avatar" />
+              <img
+                src={isError ? userAvatar : oneArticle.author.image}
+                alt="user avatar"
+                onError={() => setIsError(true)}
+              />
             </div>
           </div>
 

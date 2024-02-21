@@ -8,6 +8,7 @@ import { handleAddLike } from '../../helpers/addLike'
 import { formatCreatedDate } from '../../helpers/formatDate'
 import { PATHS } from '../App'
 
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -16,6 +17,7 @@ function ArticleCard({ article }) {
   const createdAt = formatCreatedDate(article.createdAt)
   const tagWithId = addIdForTags(article.tagList)
   const user = useSelector((state) => state.user.user)
+  const [isError, setIsError] = useState(false)
 
   return (
     <Link to={PATHS.ARTICLE.replace(':slug', article.slug)}>
@@ -50,7 +52,7 @@ function ArticleCard({ article }) {
           </div>
 
           <div className={styles.article__avatar}>
-            <img src={article.author.image || userAvatar} alt="user avatar" />
+            <img src={isError ? userAvatar : article.author.image} alt="user avatar" onError={() => setIsError(true)} />
           </div>
         </div>
       </div>

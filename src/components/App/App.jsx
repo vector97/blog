@@ -20,7 +20,7 @@ export const PATHS = {
   ARTICLE: '/articles/:slug',
   NEW_ARTICLE: 'new-article',
   EDIT_ARTICLE: '/articles/:slug/edit',
-  SIGN_UP: 'signUp',
+  SIGN_UP: '/signUp',
   SIGN_IN: 'signIn',
   PROFILE: 'profile',
   NOT_FOUND: '*',
